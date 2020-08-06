@@ -1,0 +1,45 @@
+{% extends "layOut.njk" %}
+
+{%block content%}
+
+    <section class="cards">
+        {% for item in items %}
+            <div class="card" id="{{item.id}}">
+                <div class="cards_image-class">
+                    <img src="https://img.youtube.com/vi/{{item.id}}/0.jpg" alt="Imagem do video{{item.title}}">
+                    {%if item.feature%}
+                     
+                     <div class="feature">
+                         <p>Featured</p>
+                     </div>
+                        
+                    {%endif%}
+                </div>
+                <div class="card-content">
+                    <p>
+                        {{item.title}}
+                    </p> 
+                </div>
+                <div class="card-info">
+                    <p>{{item.time}}</p>
+                    <p class="card-price">{{item.price}}</p>
+                </div>
+            </div>
+            {%endfor%}
+        </section>
+
+        <div class="modal">
+            <div class="modal-son">
+                <a class="close-modal">
+                    <i class="material-icons">close</i>
+                </a>
+
+                <div class="modal-content"></div>
+                <iframe frameborder="0"></iframe>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    {% endblock%}

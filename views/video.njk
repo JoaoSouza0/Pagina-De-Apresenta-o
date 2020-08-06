@@ -1,0 +1,27 @@
+{%extends "layOut.njk"%}
+
+{% block content%}
+
+<div class="videos">
+    <h1>
+        {{items.title}}
+    </h1>
+</div>
+
+ <section class="videos">
+            <div class="card" id="{{items.id}}">
+                <div class="cards_video-class">
+                 <iframe src="https://www.youtube.com/embed/{{items.id}}"  frameborder="0"></iframe>
+                </div>
+                <div class="card-content">
+                    <p>
+                        {{items.title}}
+                    </p> 
+                </div>
+                <div class="card-info">
+                    <p>{{items.time}}</p>
+                    <p class="card-price">{{items.price}}</p>
+                </div>
+            </div>
+        </section>
+{% endblock%}
